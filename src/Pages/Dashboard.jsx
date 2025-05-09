@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "../Styles/Dashboard.css"; // Fixed CSS import path
+import "../Styles/Dashboard.css"; // Make sure this points to our updated CSS file
 
 const Dashboard = () => {
-  // You can replace this with actual data from your backend
+  // Stats data with Nike-inspired presentation
   const stats = [
     {
       title: "TOTAL MEMBERS",
@@ -79,8 +79,9 @@ const Dashboard = () => {
     },
   ];
 
+  // Using Nike-like iconography (assuming Font Awesome)
   const menuItems = [
-    { icon: "fa-home", text: "Dashboard", active: true },
+    { icon: "fa-home", text: "Home", active: true },
     { icon: "fa-calendar-alt", text: "Events" },
     { icon: "fa-users", text: "Community" },
     { icon: "fa-book", text: "Scriptures" },
@@ -92,7 +93,7 @@ const Dashboard = () => {
 
   const quickActions = [
     { icon: "fa-plus", text: "Add Member" },
-    { icon: "fa-calendar-plus", text: "Add Event" },
+    { icon: "fa-calendar-plus", text: "New Event" },
     { icon: "fa-bullhorn", text: "Announce" },
     { icon: "fa-envelope", text: "Send Email" },
   ];
@@ -119,7 +120,7 @@ const Dashboard = () => {
 
       <div className="main-content">
         <div className="header">
-          <div className="page-title">Welcome, Admin</div>
+          <div className="page-title">Welcome, John</div>
           <div className="user-profile">
             <div>John Doe</div>
             <div className="avatar">JD</div>
@@ -164,7 +165,9 @@ const Dashboard = () => {
                     <div className="event-details">
                       <div className="event-title">{event.title}</div>
                       <div className="event-time">{event.time}</div>
-                      <div className="event-location">{event.location}</div>
+                      <div className="event-location">
+                        <i className="fas fa-map-marker-alt"></i> {event.location}
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -218,7 +221,7 @@ const Dashboard = () => {
 
               <div className="quick-actions-grid">
                 {quickActions.map((action, index) => (
-                  <button key={index} className="button action-button">
+                  <button key={index} className="action-button">
                     <i className={`fas ${action.icon}`}></i> {action.text}
                   </button>
                 ))}
