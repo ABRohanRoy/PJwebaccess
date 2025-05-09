@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "..Styles/Dashboard.css"; // You'll need to create this CSS file with the styles
+import "../Styles/Dashboard.css"; // Fixed CSS import path
 
 const Dashboard = () => {
   // You can replace this with actual data from your backend
